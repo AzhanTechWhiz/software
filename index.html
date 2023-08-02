@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <div class="contianer">
+
+        <div class="col1">
+            <div class="field">
+                <input type="text" placeholder="Pc Name :" id="pcName">
+            </div>
+            <div class="field">
+                <input type="text" placeholder="Warranty :" id="pcWarranty">
+            </div>
+            <div class="field">
+                <input type="text" placeholder="Model :" id="pcModel">
+            </div>
+            <div class="field">
+                <input type="text" placeholder="Description :" id="pcDescription">
+            </div>
+            <div class="primary-heading"><span id="result"></span></div>
+            <button onclick="onSubmit()">SUBMIT</button>
+        </div>
+        <div class="col2">
+            <p id="field1"></p>
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script>
+        let pcs = []
+        function onSubmit() {
+
+            let pcName = document.getElementById("pcName").value;
+            let pcWarranty = document.getElementById("pcWarranty").value;
+            let pcModel = document.getElementById("pcModel").value;
+            let pcDescription = document.getElementById("pcDescription").value;
+            if (pcName === '' || pcWarranty === '' || pcModel === '' || pcDescription === '') {
+                return document.getElementById('field1').innerHTML = 'No pcs found';
+            }
+            else {
+                const items = [pcName, pcWarranty, pcModel, pcDescription];
+                let Input = document.getElementById("field1").innerHTML = items;
+            }
+
+            const newPc =
+            {
+                name: pcName,
+                warranty: pcWarranty,
+                model: pcModel,
+                description: pcDescription,
+            }
+            pcs.push(newPc);
+
+        showinfo()
+
+
+        }
+
+       function showinfo(){
+        console.log('work in progress', pcs);
+       } 
+    </script>
+
+</body>
+
+</html>
